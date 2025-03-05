@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provera vremena</title>
+</head>
+<body>
+    <h1>Provedeno vreme napolju</h1>
+    <label for="timeSpent">Unesite vreme u minutima:</label>
+    <input type="number" id="timeSpent" placeholder="Unesite broj minuta">
+    <button onclick="checkTime()">Proveri</button>
+    <p id="message"></p>
+
+    <script>
+        // Funkcija za proveru vremena
+        function checkTime() {
+            const timeSpent = document.getElementById('timeSpent').value; // Preuzima unos korisnika
+            const message = document.getElementById('message'); // Element gde se prikazuje poruka
+
+            if (timeSpent > 45) {
+                message.textContent = 'Go home!';
+                message.style.color = 'red';
+            } else {
+                message.textContent = 'Uskoro go home!';
+                message.style.color = 'orange';
+            }
+        }
+    </script>
+</body>
+</html>
